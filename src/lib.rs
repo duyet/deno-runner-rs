@@ -5,6 +5,7 @@ use deno_core::{FsModuleLoader, JsRuntime, RuntimeOptions};
 use std::{collections::HashMap, fmt::Display, rc::Rc};
 
 pub use deno_core::{anyhow, op};
+pub use tokio::runtime::Runtime;
 
 /// Deno runtime
 pub struct DenoRunner {
