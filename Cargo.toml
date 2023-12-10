@@ -7,7 +7,7 @@ authors = ["Duyet Le <me@duyet.net>"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.66"
-deno_core = "0.155.0"
-deno_console = "0.73.0"
-tokio = { version = "1.21.2", features = ["rt", "macros", "rt-multi-thread"] }
+anyhow = "1.0.75"
+deno_core = "0.237.0"
+deno_console = "0.127.0"
+tokio = { version = "1.35.0", features = ["rt", "macros", "rt-multi-thread"] }
