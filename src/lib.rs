@@ -2,10 +2,19 @@
 
 use anyhow::Result;
 use deno_core::{FsModuleLoader, JsRuntime, RuntimeOptions};
-use std::{collections::HashMap, fmt::Display, rc::Rc};
+use std::{collections::HashMap, fmt::Display, rc::Rc, sync::Arc};
 
 pub use deno_core::{anyhow, op};
 pub use tokio::runtime::Runtime;
+
+/// Simple permissions implementation for timers
+pub struct NoTimersPermission;
+
+impl deno_web::TimersPermission for NoTimersPermission {
+    fn allow_hrtime(&mut self) -> bool {
+        false
+    }
+}
 
 /// Deno runtime
 pub struct DenoRunner {
@@ -56,9 +65,20 @@ impl Builder {
     }
 
     pub fn build(self) -> DenoRunner {
+        // Create a BlobStore for deno_web
+        let blob_store = Arc::new(deno_web::BlobStore::default());
+
         let extensions = vec![
-            deno_console::init(),
-            deno_core::Extension::builder().ops(self.ops).build(),
+            // deno_webidl must be initialized before deno_web
+            deno_webidl::deno_webidl::init_ops_and_esm(),
+            // deno_web provides console, timers, and other Web APIs
+            deno_web::deno_web::init_ops_and_esm::<NoTimersPermission>(
+                blob_store,
+                None, // location
+            ),
+            deno_core::Extension::builder("custom_ops")
+                .ops(self.ops)
+                .build(),
         ];
 
         let mut runtime = JsRuntime::new(RuntimeOptions {

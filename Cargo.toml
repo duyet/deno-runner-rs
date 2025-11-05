@@ -9,5 +9,6 @@ authors = ["Duyet Le <me@duyet.net>"]
 [dependencies]
 anyhow = "1.0"
 deno_core = "0.365"
-deno_console = "0.222"
+deno_web = "0.252"
+deno_webidl = "0.221"
 tokio = { version = "1", features = ["rt", "macros", "rt-multi-thread"] }
