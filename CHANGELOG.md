@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Professional project infrastructure:
+  - `.editorconfig` for consistent formatting across editors
+  - `.gitattributes` for consistent line endings
+  - `rustfmt.toml` for Rust formatting configuration
+  - `clippy.toml` for linting configuration
+  - `CODE_OF_CONDUCT.md` following Contributor Covenant 2.1
+  - GitHub issue templates (bug report, feature request, security)
+  - Pull request template with comprehensive checklist
 - Comprehensive API documentation with examples
 - Security features:
   - Variable name validation to prevent code injection
