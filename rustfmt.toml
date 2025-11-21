@@ -1,0 +1,18 @@
+# Rustfmt configuration (stable features only)
+max_width = 100
+hard_tabs = false
+tab_spaces = 4
+newline_style = "Unix"
+use_small_heuristics = "Default"
+reorder_imports = true
+reorder_modules = true
+remove_nested_parens = true
+edition = "2021"
+
+# Note: The following features require nightly Rust and are commented out:
+# format_code_in_doc_comments = true
+# format_strings = false
+# wrap_comments = true
+# comment_width = 100
+# normalize_comments = true
+# normalize_doc_attributes = true

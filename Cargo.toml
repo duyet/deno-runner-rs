@@ -1,8 +1,22 @@
 [package]
 name = "deno_runner"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
+rust-version = "1.70.0"
 authors = ["Duyet Le <me@duyet.net>"]
+license = "MIT"
+description = "A secure and elegant JavaScript runner for Rust, powered by Deno Core"
+repository = "https://github.com/duyet/deno-runner-rs"
+homepage = "https://github.com/duyet/deno-runner-rs"
+documentation = "https://docs.rs/deno_runner"
+readme = "README.md"
+keywords = ["javascript", "deno", "runtime", "js", "v8"]
+categories = ["api-bindings", "development-tools", "web-programming"]
+exclude = [
+    ".github/",
+    "examples/",
+    "tests/",
+]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -11,3 +25,13 @@ anyhow = "1.0"
 deno_core = "0.365"
 deno_console = "0.222"
 tokio = { version = "1", features = ["rt", "macros", "rt-multi-thread"] }
+serde = "1.0"
+serde_json = "1.0"
+thiserror = "2.0"
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["async_tokio"] }
+
+[[bench]]
+name = "runner_benchmark"
+harness = false

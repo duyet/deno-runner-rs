@@ -1,0 +1,18 @@
+msrv = "1.70.0"
+
+# Warn on all clippy warnings by default
+# Individual lints can be allowed in code with #[allow(...)]
+warn-on-all-wildcard-imports = true
+
+# Documentation
+missing-docs-in-private-items = "allow"
+missing-errors-doc = "warn"
+missing-panics-doc = "warn"
+
+# Complexity
+too-many-arguments = "warn"
+type-complexity = "warn"
+
+# Style
+redundant-field-names = "warn"
+redundant-static-lifetimes = "warn"
