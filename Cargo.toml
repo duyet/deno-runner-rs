@@ -8,6 +8,6 @@ authors = ["Duyet Le <me@duyet.net>"]
 
 [dependencies]
 anyhow = "1.0"
-deno_core = "0.365"
+deno_core = "0.376"
 deno_console = "0.222"
 tokio = { version = "1", features = ["rt", "macros", "rt-multi-thread"] }
