@@ -1,0 +1,20 @@
+name: Security Vulnerability
+description: Report a security vulnerability (PRIVATE)
+title: "[Security]: "
+labels: ["security"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚠️ IMPORTANT
+
+        **DO NOT** report security vulnerabilities through public GitHub issues!
+
+        Please report security vulnerabilities by emailing: **me@duyet.net**
+
+        See our [Security Policy](https://github.com/duyet/deno-runner-rs/security/policy) for more details.
+
+  - type: markdown
+    attributes:
+      value: |
+        If this is not a security vulnerability, please use the Bug Report template instead.

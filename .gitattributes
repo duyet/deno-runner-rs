@@ -1,0 +1,56 @@
+* text=auto eol=lf
+
+# Rust
+*.rs text diff=rust
+
+# TOML
+*.toml text
+
+# Markdown
+*.md text
+
+# Documentation
+*.txt text
+AUTHORS text
+CHANGELOG text
+CHANGES text
+CONTRIBUTING text
+COPYING text
+copyright text
+*COPYRIGHT* text
+INSTALL text
+license text
+LICENSE text
+NEWS text
+readme text
+*README* text
+TODO text
+
+# Configuration
+*.json text
+*.lock text -diff
+*.toml text
+*.xml text
+*.yaml text
+*.yml text
+.editorconfig text
+.gitattributes text
+.gitignore text
+
+# Scripts
+*.bash text eol=lf
+*.fish text eol=lf
+*.sh text eol=lf
+
+# These are explicitly windows files
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.wasm binary
